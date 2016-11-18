@@ -9,13 +9,13 @@ use Stunami\Scraper\Http\Psr7Client;
 final class HttpFetcher implements FetcherInterface
 {
     /**
-     * @var Psr7Client
+     * @var ClientInterface
      */
     private $client;
 
     /**
      * HttpFetcher constructor.
-     * @param Psr7Client $client
+     * @param ClientInterface $client
      */
     public function __construct(ClientInterface $client)
     {
@@ -37,6 +37,6 @@ final class HttpFetcher implements FetcherInterface
      */
     public function multiFetch(array $uri)
     {
-        return $this->client->getAsnyc($uri);
+        return $this->client->getConcurrent($uri);
     }
 }

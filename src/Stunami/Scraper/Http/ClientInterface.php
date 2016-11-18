@@ -7,6 +7,8 @@
  */
 namespace Stunami\Scraper\Http;
 
+use Psr\Http\Message\ResponseInterface;
+
 
 /**
  * Class HttpClient
@@ -19,7 +21,7 @@ interface ClientInterface
 {
     /**
      * @param $url
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
     public function get($url);
 
@@ -27,5 +29,5 @@ interface ClientInterface
      * @param array $urls
      * @return array
      */
-    public function getAsnyc(array $urls);
+    public function getConcurrent(array $urls);
 }

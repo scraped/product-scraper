@@ -4,6 +4,7 @@ namespace Stunami\Scraper\Http;
 
 use GuzzleHttp\Promise;
 use GuzzleHttp\Client;
+use Psr\Http\Message\ResponseInterface;
 
 /**
  * Class Psr7Client
@@ -29,8 +30,10 @@ final class Psr7Client implements ClientInterface
     }
 
     /**
+     * Makes a GET request
+     *
      * @param $url
-     * @return \Psr\Http\Message\ResponseInterface
+     * @return ResponseInterface
      */
     public function get($url)
     {
@@ -38,10 +41,12 @@ final class Psr7Client implements ClientInterface
     }
 
     /**
+     * Makes multiple concurrent
+     *
      * @param array $urls
      * @return array
      */
-    public function getAsnyc(array $urls)
+    public function getConcurrent(array $urls)
     {
         $promises = [];
         foreach( $urls as $url) {

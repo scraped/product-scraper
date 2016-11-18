@@ -47,7 +47,7 @@ class HttpFetcherTest extends \PHPUnit_Framework_TestCase
         $response2 = $this->getMockBuilder(ResponseInterface::class)
             ->getMock();
 
-        $client->method('getAsnyc')->willReturn([$response1, $response2]);
+        $client->method('getConcurrent')->willReturn([$response1, $response2]);
 
         $fetcher = new HttpFetcher($client);
 

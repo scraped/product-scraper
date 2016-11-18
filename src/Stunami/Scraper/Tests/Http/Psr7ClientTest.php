@@ -52,7 +52,7 @@ class Psr7ClientTest extends \PHPUnit_Framework_TestCase
 
         $client = new Psr7Client($guzzle);
 
-        $responses = $client->getAsnyc(['http://localhost/1', 'http://localhost/2']);
+        $responses = $client->getConcurrent(['http://localhost/1', 'http://localhost/2']);
 
         $this->assertCount(2, $responses);
         $this->assertInstanceOf(ResponseInterface::class, $responses[0]);
