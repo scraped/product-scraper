@@ -1,0 +1,17 @@
+{
+  "results": [
+    {
+      "title": "Product One",
+      "size": 10,
+      "unit_price": 1,
+      "description": "Product One Description"
+    },
+    {
+      "title": "Product Two",
+      "size": 20,
+      "unit_price": 2,
+      "description": "Product Two Description"
+    }
+  ],
+  "total": 3
+}
